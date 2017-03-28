@@ -6,7 +6,7 @@ Installs and configures Rainloop Webmail.
 ## ToDo
 
 * manage w/ Chef even application.ini. Use Template or File resource
-* support Debian
+* support other OS
 * test upgrade of Rainloop through Chef
 
 ## Try it w/ Kitchen
@@ -14,7 +14,6 @@ Installs and configures Rainloop Webmail.
 ```kitchen list ```
 ```
 Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
-default-ubuntu-1604  Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <None>
 default-centos-72    Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <None>
 ```
 
@@ -23,7 +22,6 @@ default-centos-72    Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <
 
 ## Tested Platforms
 
-- Ubuntu
 - CentOS
 
 ## Requirements

@@ -8,7 +8,7 @@ include_recipe 'apache2'
 
 include_recipe 'php'
 
-include_recipe 'apache2::mod_php5' if node['platform'] == 'centos'
+include_recipe 'apache2::mod_php5'
 
 node['rainloop']['php']['extensions'].each do |php_extension|
   php_pear php_extension do
@@ -59,5 +59,5 @@ node['rainloop']['domains'].keys.each do |domain|
   end
 end
 
-# thinking to make a recipe for automatic installation...
+# consider to make a recipe for automatic installation...
 # curl -sL https://repository.rainloop.net/installer.php | php

@@ -1,6 +1,5 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'httpd'
-cookbook 'apache2'
+cookbook 'apache2', git: 'https://github.com/sous-chefs/apache2.git', branch: 'v3.2.2'
 
 metadata

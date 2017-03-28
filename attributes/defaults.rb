@@ -6,6 +6,15 @@ default['rainloop']['archive']['url'] = 'https://www.rainloop.net/repository/web
 default['rainloop']['archive']['checksum'] = '371121744dfb4604f91ef87a8a2b497ecc69e001974c5890980fcd4a7cf3b408'
 default['rainloop']['archive']['version'] = '1.11.0.203'
 
+case node['platform']
+when 'centos'
+    default['rainloop']['user'] = 'apache'
+    default['rainloop']['group'] = 'apache'
+when 'ubuntu'
+    default['rainloop']['user'] = 'www-data'
+    default['rainloop']['group'] = 'www-data'
+end
+
 # Document root of Rainloop
 default['rainloop']['base'] = '/var/www/html/webmail'
 
