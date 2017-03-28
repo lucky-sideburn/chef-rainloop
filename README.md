@@ -15,7 +15,7 @@ Installs and configures Rainloop Webmail.
 ```
 Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
 default-ubuntu-1604  Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <None>
-default-centos-72    Vagrant  ChefZero     Inspec    Ssh        Converged      <None>
+default-centos-72    Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <None>
 ```
 
 * Try w/ Centos: ```kitchen converge default-centos-72```

@@ -16,8 +16,8 @@ ark 'rainloop' do
   url node['rainloop']['archive']['url']
   checksum node['rainloop']['archive']['checksum']
   path node['rainloop']['base']
-  owner 'apache'
-  group 'apache'
+  owner node['rainloop']['user']
+  group node['rainloop']['group']
   mode 0o775
   action :put
   notifies :run, 'ruby_block[copy index.php]', :immediately
@@ -35,7 +35,6 @@ end
 
 execute 'set_perms' do
   command 'chmod -R 775 rainloop'
-  action :nothing
   cwd node['rainloop']['base']
   action :nothing
 end
@@ -64,7 +63,7 @@ node['rainloop']['domains'].keys.each do |domain|
   file File.join(node['rainloop']['base'], 'data', '_data_', '_default_', 'domains', "#{domain}.ini") do
     content file_content
     mode '0755'
-    owner 'apache'
-    group 'apache'
+    owner node['rainloop']['user']
+    group node['rainloop']['group']
   end
 end

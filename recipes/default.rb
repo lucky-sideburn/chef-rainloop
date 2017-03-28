@@ -5,8 +5,10 @@
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 include_recipe 'apache2'
+
 include_recipe 'php'
-include_recipe 'apache2::mod_php5'
+
+include_recipe 'apache2::mod_php5' if node['platform'] == 'centos'
 
 node['rainloop']['php']['extensions'].each do |php_extension|
   php_pear php_extension do
@@ -18,8 +20,8 @@ package 'php-xml'
 
 directory node['rainloop']['base'] do
   mode  '770'
-  owner 'apache'
-  group 'apache'
+  owner node['rainloop']['user']
+  group node['rainloop']['group']
   recursive true
 end
 
@@ -52,8 +54,8 @@ node['rainloop']['domains'].keys.each do |domain|
   file File.join(node['rainloop']['base'], 'data', '_data_', '_default_', 'domains', "#{domain}.ini") do
     content file_content
     mode '0755'
-    owner 'apache'
-    group 'apache'
+    owner node['rainloop']['user']
+    group node['rainloop']['group']
   end
 end
 
