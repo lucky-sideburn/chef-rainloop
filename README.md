@@ -18,7 +18,6 @@ default-centos-72    Vagrant  ChefZero     Inspec    Ssh        <Not Created>  <
 ```
 
 * Try w/ Centos: ```kitchen converge default-centos-72```
-* Try w/ Ubuntu: ```kitchen converge default-ubuntu-1604```
 
 ## Tested Platforms
 

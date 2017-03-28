@@ -8,11 +8,11 @@ default['rainloop']['archive']['version'] = '1.11.0.203'
 
 case node['platform']
 when 'centos'
-    default['rainloop']['user'] = 'apache'
-    default['rainloop']['group'] = 'apache'
+  default['rainloop']['user'] = 'apache'
+  default['rainloop']['group'] = 'apache'
 when 'ubuntu'
-    default['rainloop']['user'] = 'www-data'
-    default['rainloop']['group'] = 'www-data'
+  default['rainloop']['user'] = 'www-data'
+  default['rainloop']['group'] = 'www-data'
 end
 
 # Document root of Rainloop

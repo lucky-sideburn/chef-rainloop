@@ -18,7 +18,7 @@ ark 'rainloop' do
   path node['rainloop']['base']
   owner node['rainloop']['user']
   group node['rainloop']['group']
-  mode 0775
+  mode 0o775
   action :put
   notifies :run, 'ruby_block[copy index.php]', :immediately
   notifies :run, 'execute[set_perms]', :immediately
